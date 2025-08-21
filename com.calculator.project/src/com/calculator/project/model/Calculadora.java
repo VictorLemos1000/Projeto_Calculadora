@@ -66,7 +66,7 @@ public class Calculadora {
 		return resultado;
 	}
 	
-	public float divisão(float dividendo, float divisor) {
+	public float divisao(float dividendo, float divisor) {
 		// TODO Auto-generated method stub
 		
 		/*
@@ -182,11 +182,19 @@ public class Calculadora {
 			resultado = numero1 * numero2;
 			break;
 		case "/":
+			if (numero2 == 0) {
+				display = "Erro";
+				limparDisplay();
+				return;
+			}
+			
 			resultado = numero1 / numero2;
-			break;
+			break;			
 		default:
 			break;
 		}
+		String operacaoCompleta = String.format(" %.2f %s %.2f = %.2f", numero1, operacaoPendente, numero2, resultado);
+		historidoDeOperacoes.add(operacaoCompleta);
 		
 		display = String.valueOf(resultado);
 		valorAtual = display;
