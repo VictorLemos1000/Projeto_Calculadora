@@ -201,4 +201,16 @@ public class Calculadora {
 		operacaoPendente = ""; // Reset da operação;
 		aguardandoNovoNumero = true;
 	}
+	
+	public String getDisplay() {
+		return display;
+	}
+
+	public List<String> getHistoridoDeOperacoes() {
+		return historidoDeOperacoes;
+	}
+	
+	public void limparHistorico() {
+		historidoDeOperacoes.clear();
+	}
 }
